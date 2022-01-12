@@ -87,5 +87,5 @@ st.write("##### The final balance is " + str(round(balance)))
 st.write("##### That is " +str(round(balance-initialBalance)) + "$ in " + chartPeriod + " (" + str(round((balance-initialBalance)/initialBalance*100,1)) + "%). This ticker did " + str(round((price[-1]-price[0])/price[0]*100,1)) + "% in that time.")
 if st.button('Say hello'):
      st.write('Why hello there')
- else:
+else:
      st.write('Goodbye')
