@@ -74,23 +74,23 @@ inPosition = False
 
 def calculate():
     for i in range(len(price)):
-    if(rsi[i] < buyLimit):
-        # want to buy
-        if(inPosition):
-            pass
-        else:
-            inPosition = True
-            buyPrice = price[i]
-            buyPrices += [buyPrice]
-    if(rsi[i] > sellLimit):
-        #want to sell
-        if(inPosition):
-            inPosition = False
-            sellPrice = price[i]
-            sellPrices += [sellPrice]
-            trades += 1
-            balance = balance * sellPrice / buyPrice
-            balance_track += [balance]
+        if(rsi[i] < buyLimit):
+            # want to buy
+            if(inPosition):
+                pass
+            else:
+                inPosition = True
+                buyPrice = price[i]
+                buyPrices += [buyPrice]
+        if(rsi[i] > sellLimit):
+            #want to sell
+            if(inPosition):
+                inPosition = False
+                sellPrice = price[i]
+                sellPrices += [sellPrice]
+                trades += 1
+                balance = balance * sellPrice / buyPrice
+                balance_track += [balance]
     
 calculate()
 st.write("""
