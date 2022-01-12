@@ -10,7 +10,7 @@ from matplotlib import pyplot as plt
 ticker = "XRP-USD"
 rsiPeriod = 14
 chartPeriod = "100d"
-interval = "1h"
+interval = "30m"
 initialBalance = 10000
 
 #Variables
