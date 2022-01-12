@@ -43,7 +43,14 @@ def RSI(rsi):
 
 st.write("""# Trading Bot""")
 
-ticker = str(st.text_input("-Input Desired Ticker (Yahoo Finance)"))
+option = st.selectbox(
+     'Which ticker are you looking for?',
+     ('eth-usd', 'ada-usd', 'btc-usd','xrp-usd','doge-usd','shib-usd','mana-usd','rose-usd','avax-usd','ltc-usd','^VIX'))
+ticker = option
+selfTrade = st.checkbox('I want a different ticker')
+if(selfTrade):
+    ticker = str(st.text_input("-Input Desired Ticker (Yahoo Finance)"))
+
 rsiPeriod = int(st.text_input("-Input Desired Rsi Period"))
 buyLimit = int(st.text_input("-Input Desired Buy Limit"))
 sellLimit = int(st.text_input("-Input Desired Sell Limit"))
