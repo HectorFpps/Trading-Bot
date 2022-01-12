@@ -43,7 +43,7 @@ st.write("""# Trading Bot""")
 ticker = str(st.text_input("-Input Desired Ticker (Yahoo Finance)"))
 rsiPeriod = int(st.text_input("-Input Desired Rsi Period"))
 buyLimit = int(st.text_input("-Input Desired Buy Limit"))
-sellLimit = int(st.text_input("-Input Desired Sell Period"))
+sellLimit = int(st.text_input("-Input Desired Sell Limit"))
 
 balance_track = []
 tickerPrice(price)
