@@ -85,6 +85,8 @@ st.line_chart(balance_track)
 st.write("##### The final balance is " + str(round(balance)))
 st.write("##### That is " +str(round(balance-initialBalance)) + "$ in " + chartPeriod + " (" + str(round((balance-initialBalance)/initialBalance*100,1)) + "%). This ticker did " + str(round((price[-1]-price[0])/price[0]*100,1)) + "% in that time.")
 
+st.error('This is an error')
+
 if showTrades:
     st.balloons()
     for i in range(len(sellPrices)):
