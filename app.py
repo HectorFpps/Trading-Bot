@@ -70,7 +70,10 @@ RSI(rsi)
 
 trades = 0
 inPosition = False
-for i in range(len(price)):
+
+
+def calculate():
+    for i in range(len(price)):
     if(rsi[i] < buyLimit):
         # want to buy
         if(inPosition):
@@ -88,7 +91,8 @@ for i in range(len(price)):
             trades += 1
             balance = balance * sellPrice / buyPrice
             balance_track += [balance]
-
+    
+calculate()
 st.write("""
 #### -Price of {ticker}
 """.format(ticker=ticker))
