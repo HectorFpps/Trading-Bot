@@ -50,6 +50,14 @@ ticker = option
 selfTrade = st.checkbox('I want a different ticker')
 if(selfTrade):
     ticker = str(st.text_input("-Input Desired Ticker (Yahoo Finance)"))
+    
+interval = st.selectbox(
+     'What candlestick inverval?',
+     ('1m', '2m', '5m','15m','30m','60m','90m','1h','1d','5d','1wk','1mo','3mo'))
+
+chartPeriod = st.selectbox(
+     'What candlestick inverval?',
+     ('1h','2h','12h','1d','2d', '5d','15d','30d','60d','100d','200d','300d','400d','600d','800d'))
 
 rsiPeriod = int(st.text_input("-Input Desired Rsi Period"))
 buyLimit = int(st.text_input("-Input Desired Buy Limit"))
