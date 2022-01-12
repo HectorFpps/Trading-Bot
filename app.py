@@ -4,11 +4,12 @@ import pandas as pd
 import pandas_ta as ta
 from matplotlib import pyplot as plt
 
+# “1m”, “2m”, “5m”, “15m”, “30m”, “60m”, “90m”, “1h”, “1d”, “5d”, “1wk”, “1mo”, “3mo”
 
 # Important Info
 ticker = "XRP-USD"
 rsiPeriod = 14
-chartPeriod = "1d"
+chartPeriod = "10d"
 interval = "1m"
 initialBalance = 10000
 
