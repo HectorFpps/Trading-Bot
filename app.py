@@ -85,10 +85,12 @@ st.line_chart(balance_track)
 st.write("##### The final balance is " + str(round(balance)))
 st.write("##### That is " +str(round(balance-initialBalance)) + "$ in " + chartPeriod + " (" + str(round((balance-initialBalance)/initialBalance*100,1)) + "%). This ticker did " + str(round((price[-1]-price[0])/price[0]*100,1)) + "% in that time.")
 
-st.error('This is an error')
+if(balance<initialBalance):
+    st.error('This stategy is not profitable')
+else:
+    st.balloons()
 
 if showTrades:
-    st.balloons()
     for i in range(len(sellPrices)):
         st.write("Buy at " + str(buyPrices[i]) + " Sell at " + str(sellPrices[i]) + " Current balance: " + str(balance_track[i]) + " (" + str(sellPrices[i]/buyPrices[i]*100-100) + "%)" )
 st.write("Total trades: " + str(len(sellPrices)))
