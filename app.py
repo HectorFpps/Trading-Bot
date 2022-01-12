@@ -43,10 +43,9 @@ def RSI(rsi):
 
 st.write("""# Trading Bot""")
 
-option = st.selectbox(
+ticker = st.selectbox(
      'Which ticker are you looking for?',
      ('eth-usd', 'ada-usd', 'btc-usd','xrp-usd','doge-usd','shib-usd','mana-usd','rose-usd','avax-usd','ltc-usd','^VIX'))
-ticker = option
 selfTrade = st.checkbox('I want a different ticker')
 if(selfTrade):
     ticker = str(st.text_input("-Input Desired Ticker (Yahoo Finance)"))
@@ -65,13 +64,14 @@ sellLimit = int(st.text_input("-Input Desired Sell Limit"))
 showTrades = st.checkbox('Show trades')
 
 balance_track = []
-tickerPrice(price)
-RSI(rsi)
 
-trades = 0
-inPosition = False
+def calculatePrices:
+    tickerPrice(price)
+    RSI(rsi)
+    trades = 0
+    inPosition = False
 
-for i in range(len(price)):
+    for i in range(len(price)):
         if(rsi[i] < buyLimit):
             # want to buy
             if(inPosition):
@@ -89,7 +89,9 @@ for i in range(len(price)):
                 trades += 1
                 balance = balance * sellPrice / buyPrice
                 balance_track += [balance]
-                
+
+calculatePrices()
+
 st.write("""
 #### -Price of {ticker}
 """.format(ticker=ticker))
