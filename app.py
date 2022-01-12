@@ -47,6 +47,7 @@ ticker = str(st.text_input("-Input Desired Ticker (Yahoo Finance)"))
 rsiPeriod = int(st.text_input("-Input Desired Rsi Period"))
 buyLimit = int(st.text_input("-Input Desired Buy Limit"))
 sellLimit = int(st.text_input("-Input Desired Sell Limit"))
+showTrades = st.checkbox('Show trades')
 
 balance_track = []
 tickerPrice(price)
@@ -72,8 +73,6 @@ for i in range(len(price)):
             trades += 1
             balance = balance * sellPrice / buyPrice
             balance_track += [balance]
-            
-            #st.write("Trade " + str(trades) + ": Buy at " + str(buyPrice) + " Sell at " + str(sellPrice) + " Current balance: " + str(balance) + " (" + str(sellPrice/buyPrice*100-100) + "%)" )
 
 st.write("""
 #### -Price of {ticker}
@@ -86,7 +85,6 @@ st.line_chart(balance_track)
 st.write("##### The final balance is " + str(round(balance)))
 st.write("##### That is " +str(round(balance-initialBalance)) + "$ in " + chartPeriod + " (" + str(round((balance-initialBalance)/initialBalance*100,1)) + "%). This ticker did " + str(round((price[-1]-price[0])/price[0]*100,1)) + "% in that time.")
 
-agree = st.checkbox('I agree')
-
-if agree:
-     st.write('Great!')
+if showTrades:
+    for i in buyTrades:
+        st.write("Buy at " + str(buyPrices[i]) + " Sell at " + str(sellPrices[i]) + " Current balance: " + str(balance_track[i]) + " (" + str(sellPrices[i]/buyPrices[i]*100-100) + "%)" )
