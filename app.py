@@ -40,7 +40,7 @@ def RSI(rsi):
 
 st.write("""# Trading Bot""")
 
-ticker = str(st.text_input("Input Desired Ticker (Yahoo Finance)"))
+ticker = str(st.text_input("-Input Desired Ticker (Yahoo Finance)"))
 rsiPeriod = int(st.text_input("-Input Desired Rsi Period"))
 buyLimit = int(st.text_input("-Input Desired Buy Limit"))
 sellLimit = int(st.text_input("-Input Desired Sell Period"))
