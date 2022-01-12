@@ -86,14 +86,11 @@ st.write("##### The final balance is " + str(round(balance)))
 st.write("##### That is " +str(round(balance-initialBalance)) + "$ in " + chartPeriod + " (" + str(round((balance-initialBalance)/initialBalance*100,1)) + "%). This ticker did " + str(round((price[-1]-price[0])/price[0]*100,1)) + "% in that time.")
 
 if(balance<initialBalance):
-    st.error('This stategy is not profitable')
+    st.error('This stategy is not profitable :(')
 else:
+    st.success('This strategy is profitable!')
     st.balloons()
     
-st.error('This stategy is not profitable') 
-st.warning('This is a warning')
-st.info('This is a purely informational message')
-st.success('This is a success message!')
 
 if showTrades:
     for i in range(len(sellPrices)):
