@@ -89,7 +89,7 @@ if(balance<initialBalance):
     st.error('This stategy is not profitable :(')
 else:
     st.success('This strategy is profitable!')
-    st.balloons()
+    #st.balloons()
     
 
 if showTrades:
