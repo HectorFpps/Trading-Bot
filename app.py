@@ -12,7 +12,6 @@ rsiPeriod = 14
 chartPeriod = "600d"
 interval = "1h"
 initialBalance = 10000
-leverage = 5
 
 #Variables
 rsi = []
@@ -52,7 +51,6 @@ tickerPrice(price)
 RSI(rsi)
 
 
-balance = balance * leverage
 inPosition = False
 for i in range(len(price)):
     if(rsi[i] < buyLimit):
@@ -62,17 +60,17 @@ for i in range(len(price)):
         else:
             inPosition = True
             buyPrice = price[i]
-            #print("Buy at " + str(buyPrice))
+            st.write("Buy at " + str(buyPrice))
     if(rsi[i] > sellLimit):
         #want to sell
         if(inPosition):
             inPosition = False
             sellPrice = price[i]
-            #print("Selling at " + str(sellPrice))
+            st.write("Selling at " + str(sellPrice))
+            st.write("Balance + "str(balance))
             balance = balance * sellPrice / buyPrice
             balance_track += [balance]
-            
-balance = balance / leverage
+           
 
 st.write("""
 #### -Price of {ticker}
