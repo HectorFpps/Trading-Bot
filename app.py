@@ -89,6 +89,11 @@ if(balance<initialBalance):
     st.error('This stategy is not profitable')
 else:
     st.balloons()
+    
+st.error('This stategy is not profitable') 
+st.warning('This is a warning')
+st.info('This is a purely informational message')
+st.success('This is a success message!')
 
 if showTrades:
     for i in range(len(sellPrices)):
