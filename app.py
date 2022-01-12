@@ -61,7 +61,7 @@ for i in range(len(price)):
         else:
             inPosition = True
             buyPrice = price[i]
-            st.write("Trade " + trades + ": Buy at " + str(buyPrice))
+            st.write("Trade " + str(trades) + ": Buy at " + str(buyPrice))
     if(rsi[i] > sellLimit):
         #want to sell
         if(inPosition):
