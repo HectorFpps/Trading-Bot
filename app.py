@@ -65,7 +65,7 @@ showTrades = st.checkbox('Show trades')
 
 balance_track = []
 
-def calculatePrices:
+def calculatePrices():
     tickerPrice(price)
     RSI(rsi)
     trades = 0
