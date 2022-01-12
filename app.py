@@ -67,8 +67,8 @@ for i in range(len(price)):
             inPosition = False
             sellPrice = price[i]
             st.write("Selling at " + str(sellPrice))
-            st.write("Balance " + str(balance))
             balance = balance * sellPrice / buyPrice
+            st.write("Balance " + str(balance))
             balance_track += [balance]
            
 
