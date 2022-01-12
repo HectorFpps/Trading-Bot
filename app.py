@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 # Important Info
 ticker = "XRP-USD"
 rsiPeriod = 14
-chartPeriod = "10d"
+chartPeriod = "1d"
 interval = "1m"
 initialBalance = 10000
 
