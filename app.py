@@ -88,4 +88,4 @@ st.write("##### That is " +str(round(balance-initialBalance)) + "$ in " + chartP
 if showTrades:
     for i in range(len(sellPrices)):
         st.write("Buy at " + str(buyPrices[i]) + " Sell at " + str(sellPrices[i]) + " Current balance: " + str(balance_track[i]) + " (" + str(sellPrices[i]/buyPrices[i]*100-100) + "%)" )
-st.weite("Total trades: " + str(len(sellPrices)))
+st.write("Total trades: " + str(len(sellPrices)))
