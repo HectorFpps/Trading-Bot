@@ -81,5 +81,5 @@ st.line_chart(price)
 st.write("#### -Trading Bot Portfolio Overtime")
 st.line_chart(balance_track)
 
-st.write("The final balance is " + str(balance))
+st.write("The final balance is " + str(round(balance,1)))
 st.write("That is " +str(balance-initialBalance) + "$ in " + chartPeriod + " (" + str((balance-initialBalance)/initialBalance*100) + "%). This ticker did " + str((price[-1]-price[0])/price[0]*100) + "% in that time.")
