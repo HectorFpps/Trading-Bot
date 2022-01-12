@@ -89,7 +89,8 @@ buyLimit = int(st.text_input("-Input Desired Buy Limit"))
 sellLimit = int(st.text_input("-Input Desired Sell Limit"))
 showTrades = st.checkbox('Show trades')
 
-calculatePrices(buyPrices,buyPrice,sellPrices,sellPrice,balance,balance_track)
+if(st.button("Calculate")):
+    calculatePrices(buyPrices,buyPrice,sellPrices,sellPrice,balance,balance_track)
 
 st.write("""
 #### -Price of {ticker}
