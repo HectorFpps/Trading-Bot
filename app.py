@@ -73,7 +73,7 @@ for i in range(len(price)):
 
             
 st.write("The final balance is " + str(balance))
-st.write("That is " +str(balance-initialBalance) + " in " + chartPeriod + " " + str((balance-initialBalance)/initialBalance*100) + "%. This ticker did " + str((price[-1]-price[0])/price[0]*100) + "% in that time.")
+st.write("That is " +str(balance-initialBalance) + "$ in " + chartPeriod + " (" + str((balance-initialBalance)/initialBalance*100) + "%). This ticker did " + str((price[-1]-price[0])/price[0]*100) + "% in that time.")
 
 
 st.write("""
