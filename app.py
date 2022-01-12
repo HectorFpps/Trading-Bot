@@ -74,7 +74,7 @@ for i in range(len(price)):
             balance = balance * sellPrice / buyPrice
             balance_track += [balance]
 
-st.write(len(balance_track)+" "+len(buyPrices)+ " "+ len(sellPrices))
+st.write(str(len(balance_track))+" "+str(len(buyPrices))+ " "+str(len(sellPrices)))
 st.write("""
 #### -Price of {ticker}
 """.format(ticker=ticker))
