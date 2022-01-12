@@ -71,8 +71,8 @@ for i in range(len(price)):
             balance = balance * sellPrice / buyPrice
             balance_track += [balance]
 
-st.write("#### -Trading Bot Portfolio Overtime")("The final balance is " + str(balance))
-st.write("#### -Trading Bot Portfolio Overtime")("That is " +str(balance-initialBalance) + " in " + chartPeriod + " " + str((balance-initialBalance)/initialBalance*100) + "%. This ticker did " + str((price[-1]-price[0])/price[0]*100) + "% in that time.")
+st.write(("The final balance is " + str(balance))
+st.write(("That is " +str(balance-initialBalance) + " in " + chartPeriod + " " + str((balance-initialBalance)/initialBalance*100) + "%. This ticker did " + str((price[-1]-price[0])/price[0]*100) + "% in that time.")
 
 
 
