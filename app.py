@@ -39,7 +39,7 @@ def RSI(rsi):
     for i in range(len(rsii)):
         rsi += [rsii[i][0]]
         
-def calculatePrices(buyPrices,buyPrice,sellPrices,sellPrice,balance):
+def calculatePrices(buyPrices,buyPrice,sellPrices,sellPrice,balance,balance_track):
     tickerPrice(price)
     RSI(rsi)
     trades = 0
@@ -89,7 +89,7 @@ buyLimit = int(st.text_input("-Input Desired Buy Limit"))
 sellLimit = int(st.text_input("-Input Desired Sell Limit"))
 showTrades = st.checkbox('Show trades')
 
-calculatePrices(buyPrices,buyPrice,sellPrices,sellPrice,balance)
+calculatePrices(buyPrices,buyPrice,sellPrices,sellPrice,balance,balance_track)
 
 st.write("""
 #### -Price of {ticker}
