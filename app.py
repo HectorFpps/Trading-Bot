@@ -94,5 +94,5 @@ else:
 
 if showTrades:
     for i in range(len(sellPrices)):
-        st.write("Buy at " + str(round(buyPrices[i])) + " Sell at " + str(round(sellPrices[i])) + " Current balance: " + str(round(balance_track[i])) + " (" + str(round(sellPrices[i]/buyPrices[i]*100-100),1) + "%)" )
+        st.write("Buy at " + str(round(buyPrices[i])) + " Sell at " + str(round(sellPrices[i])) + " Current balance: " + str(round(balance_track[i])) + " (" + str(round(sellPrices[i]/buyPrices[i]*100-100,1)) + "%)" )
 st.write("Total trades: " + str(len(sellPrices)))
