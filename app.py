@@ -60,8 +60,7 @@ for i in range(len(price)):
             pass
         else:
             inPosition = True
-            buyPrice = price[i]
-            st.write("Trade " + str(trades) + ": Buy at " + str(buyPrice))
+            buyPrice = price[i]            
     if(rsi[i] > sellLimit):
         #want to sell
         if(inPosition):
@@ -69,7 +68,7 @@ for i in range(len(price)):
             sellPrice = price[i]
             trades += 1
             balance = balance * sellPrice / buyPrice
-            st.write("Selling at " + str(sellPrice) + " Current balance: " + str(balance))
+            st.write("Trade " + str(trades) + ": Buy at " + str(buyPrice) + " Sell at " + str(sellPrice) + " Current balance: " + str(balance))
             balance_track += [balance]
            
 
