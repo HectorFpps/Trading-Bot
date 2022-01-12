@@ -21,6 +21,7 @@ sellPrice = None
 balance = initialBalance
 buyPrices = []
 sellPrices = []
+balance_track = []
 
 def tickerPrice(price):
     df = pd.DataFrame()
@@ -37,6 +38,31 @@ def RSI(rsi):
 
     for i in range(len(rsii)):
         rsi += [rsii[i][0]]
+        
+def calculatePrices():
+    tickerPrice(price)
+    RSI(rsi)
+    trades = 0
+    inPosition = False
+
+    for i in range(len(price)):
+        if(rsi[i] < buyLimit):
+            # want to buy
+            if(inPosition):
+                pass
+            else:
+                inPosition = True
+                buyPrice = price[i]
+                buyPrices += [buyPrice]
+        if(rsi[i] > sellLimit):
+            #want to sell
+            if(inPosition):
+                inPosition = False
+                sellPrice = price[i]
+                sellPrices += [sellPrice]
+                trades += 1
+                balance = balance * sellPrice / buyPrice
+                balance_track += [balance]
 
 
 ################################################################################################################################################################################################################################################
@@ -62,33 +88,6 @@ rsiPeriod = int(st.text_input("-Input Desired Rsi Period"))
 buyLimit = int(st.text_input("-Input Desired Buy Limit"))
 sellLimit = int(st.text_input("-Input Desired Sell Limit"))
 showTrades = st.checkbox('Show trades')
-
-balance_track = []
-
-def calculatePrices():
-    tickerPrice(price)
-    RSI(rsi)
-    trades = 0
-    inPosition = False
-
-    for i in range(len(price)):
-        if(rsi[i] < buyLimit):
-            # want to buy
-            if(inPosition):
-                pass
-            else:
-                inPosition = True
-                buyPrice = price[i]
-                buyPrices += [buyPrice]
-        if(rsi[i] > sellLimit):
-            #want to sell
-            if(inPosition):
-                inPosition = False
-                sellPrice = price[i]
-                sellPrices += [sellPrice]
-                trades += 1
-                balance = balance * sellPrice / buyPrice
-                balance_track += [balance]
 
 calculatePrices()
 
