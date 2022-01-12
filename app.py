@@ -68,7 +68,7 @@ for i in range(len(price)):
             sellPrice = price[i]
             trades += 1
             balance = balance * sellPrice / buyPrice
-            st.write("Trade " + str(trades) + ": Buy at " + str(buyPrice) + " Sell at " + str(sellPrice) + " Current balance: " + str(balance) + " (" + str(sellPrice/buyPrice*100) + ")" )
+            st.write("Trade " + str(trades) + ": Buy at " + str(buyPrice) + " Sell at " + str(sellPrice) + " Current balance: " + str(balance) + " (" + str(sellPrice/buyPrice*100-100) + ")" )
             balance_track += [balance]
            
 
