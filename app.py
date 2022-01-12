@@ -19,6 +19,7 @@ price = []
 buyPrice = None
 sellPrice = None
 balance = initialBalance
+trades = 0
 
 def tickerPrice(price):
     df = pd.DataFrame()
@@ -50,7 +51,7 @@ balance_track = []
 tickerPrice(price)
 RSI(rsi)
 
-
+trades = 0
 inPosition = False
 for i in range(len(price)):
     if(rsi[i] < buyLimit):
@@ -60,15 +61,15 @@ for i in range(len(price)):
         else:
             inPosition = True
             buyPrice = price[i]
-            st.write("Buy at " + str(buyPrice))
+            st.write("Trade " + trades + ": Buy at " + str(buyPrice))
     if(rsi[i] > sellLimit):
         #want to sell
         if(inPosition):
             inPosition = False
             sellPrice = price[i]
-            st.write("Selling at " + str(sellPrice))
+            trades += 1
             balance = balance * sellPrice / buyPrice
-            st.write("Balance " + str(balance))
+            st.write("Selling at " + str(sellPrice) + " Current balance: " + str(balance))
             balance_track += [balance]
            
 
