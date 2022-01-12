@@ -74,7 +74,6 @@ for i in range(len(price)):
             balance = balance * sellPrice / buyPrice
             balance_track += [balance]
 
-st.write(str(len(balance_track))+" "+str(len(buyPrices))+ " "+str(len(sellPrices)))
 st.write("""
 #### -Price of {ticker}
 """.format(ticker=ticker))
@@ -89,3 +88,4 @@ st.write("##### That is " +str(round(balance-initialBalance)) + "$ in " + chartP
 if showTrades:
     for i in range(len(sellPrices)):
         st.write("Buy at " + str(buyPrices[i]) + " Sell at " + str(sellPrices[i]) + " Current balance: " + str(balance_track[i]) + " (" + str(sellPrices[i]/buyPrices[i]*100-100) + "%)" )
+st.weite("Total trades: " + str(len(sellPrices)))
